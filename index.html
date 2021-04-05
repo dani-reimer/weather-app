@@ -1,1 +1,82 @@
-Hello Git
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/01a1136ea3.js" crossorigin="anonymous"></script>
+ 
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+  <div class="card-body">
+   <div class="row"><div class="col-6 first-column"> 
+  <form id="search-city">
+      <input type="text" class="form-control" placeholder="Enter City" aria-label="Enter city" id="search-text-input">
+    <div class="btn-group">
+    <button type="submit" class="btn btn-primary btn-sm" id="search-button">Search</button>
+    <button type="button" class="btn btn-success btn-sm" id="current-location">Current City</button>
+</div> </form>  
+   
+  <p class="updated">
+  Last updated: <h5></h5>
+</p>
+
+</div>
+
+    <div class="col-6 current-temperature-section">
+      <h3 class="current-temperature">
+        <h2></h2>
+        <strong id="temp"></strong><a href="#" id="celcius">℃ </a>| <a href="#" id="fahrenheit">℉</a>
+      </h3>
+      <h4 id="description">Partly Cloudy</h4>
+      <div class="humidity">
+     
+      Humidity: <span id="humidity"></span><br />
+      Wind: <span id="wind"></span> MPH | <a href="#">KMPH</a>
+     </div>
+    </div>
+  </div>
+    </div>
+  
+  <div class="row forecast">
+    <div class="col-2">
+      <i class="fas fa-wind"></i><br /> Mon 22 <br /> <strong>  2 ℃ </strong>| <a href="#">℉</a>
+    </div>
+    <div class="col-2">
+     <i class="fas fa-wind"></i><br /> Mon 22 <br /> <strong>  2 ℃ </strong>| <a href="#">℉</a>
+    </div>
+    <div class="col-2">
+     <i class="fas fa-wind"></i><br /> Mon 22 <br /> <strong>  2 ℃ </strong>| <a href="#">℉</a>
+    </div>
+    <div class="col-2">
+      <i class="fas fa-wind"></i><br /> Mon 22 <br /> <strong>  2 ℃ </strong>| <a href="#">℉</a>
+    </div><div class="col-2">
+      <i class="fas fa-wind"></i><br /> Mon 22 <br /> <strong>  2 ℃ </strong>| <a href="#">℉</a>
+    </div>
+    <div class="col-2">
+      <i class="fas fa-wind"></i><br /> Mon 22 <br /> <strong>  2 ℃ </strong>| <a href="#">℉</a>
+    </div>
+  </div> </div>
+    </div>
+     </div>
+     </div>
+      
+   
+  
+    <script src="index.js"></script>
+  </body>
+</html>
+
