@@ -43,6 +43,7 @@ body {
 }
 .container {
   margin-left: 5px;
+  max-width: 600px;
 }
 .card {
   padding: 15px;
@@ -89,7 +90,7 @@ a {
 }
 
 #search-text-input {
-  max-width: 55%;
+  max-width: 67%;
   margin-bottom: 2px;
 }
 .current-temperature-section {

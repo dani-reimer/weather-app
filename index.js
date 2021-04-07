@@ -104,7 +104,7 @@ function fahrenheitLink(event) {
  
 }
 
-search("Tokyo");
+search("Vancouver");
 
 let currentTemp = document.querySelector("#celcius");
 currentTemp.addEventListener("click", celciusLink);
