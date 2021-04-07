@@ -42,10 +42,12 @@ h5.innerHTML = `${day} ${month} ${date}<br /> ${hours}:${minutes}`;
 function showTemperature(response) {
   document.querySelector("#temp").innerHTML = Math.round(response.data.main.temp);
   let city = response.data.name;
+  let weatherIcon = response.data.weather[0].icon;
   document.querySelector("h2").innerHTML = `${city}`;
   document.querySelector("#humidity").innerHTML = `${response.data.main.humidity} %`;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
- document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  document.querySelector("#weather-icon").setAttribute("src", `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
 }
 
 function search(city) {
@@ -62,12 +64,15 @@ function handleSubmit(event) {
 }
 function showCurrentTemperature(response) {
     let city = response.data.name;
-    let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.main.temp);
+  console.log(response.data.weather.icon);
+  let weatherIcon = response.data.weather[0].icon;
   document.querySelector("#temp").innerHTML = `${temperature}`;
   document.querySelector("h2").innerHTML = `${city}`;
   document.querySelector("#humidity").innerHTML = `${response.data.main.humidity} %`;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  document.querySelector("#weather-icon").setAttribute("src", `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
 }
 function retrievePosition(position) {
   console.log(position);
