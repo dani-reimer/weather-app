@@ -36,21 +36,23 @@
 
 </div>
 
-    <div class="col-6 current-temperature-section clearfix">
+    <div class="col-6 current-temperature-section">
       <h3 class="current-temperature">
         <h2></h2>
-        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="sun icon" class="float-left" id="weather-icon"><span class="float-right"><strong id="temp"></strong><a href="#" id="celcius">℃ </a>| <a href="#" id="fahrenheit">℉</a>
+    <div class="row"><div class="col-6">
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="sun icon" id="weather-icon" ></div>
+        <div class="col-6"><strong id="temp"></strong><a href="#" id="celcius" class="active">℃ </a>| <a href="#" id="fahrenheit">℉</a>
       </h3>
       <h4 id="description">Partly Cloudy</h4>
       <div class="humidity">
      
       Humidity: <span id="humidity"></span><br />
-      Wind: <span id="wind"></span> MPH | <a href="#">KMPH</a></span>
-     </div>
+      Wind: <span id="wind"></span> MPH | <a href="#">KMPH</a></div></div>
+     
     </div>
   </div>
     </div>
-  
+  </div>
   <div class="row forecast">
     <div class="col-2">
       <i class="fas fa-wind"></i><br /> Mon 22 <br /> <strong>  2 ℃ </strong>| <a href="#">℉</a>

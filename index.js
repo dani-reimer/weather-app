@@ -48,6 +48,7 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
   document.querySelector("#weather-icon").setAttribute("src", `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
+  celciusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -63,7 +64,7 @@ function handleSubmit(event) {
   search(city); 
 }
 function showCurrentTemperature(response) {
-    let city = response.data.name;
+  let city = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   console.log(response.data.weather.icon);
   let weatherIcon = response.data.weather[0].icon;
@@ -73,8 +74,9 @@ function showCurrentTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
   document.querySelector("#weather-icon").setAttribute("src", `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
-}
-function retrievePosition(position) {
+ 
+  }
+  function retrievePosition(position) {
   console.log(position);
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -100,19 +102,26 @@ form.addEventListener("submit", handleSubmit);
 
 function celciusLink(event) {
   event.preventDefault();
+   currentTemp.classList.add("active");
+  currentTempF.classList.remove("active");
   let temperature = document.querySelector("#temp");
-  temperature.innerHTML = `17`;
+  temperature.innerHTML = Math.round(celciusTemperature);
 }
 function fahrenheitLink(event) {
   event.preventDefault();
+  currentTemp.classList.remove("active");
+  currentTempF.classList.add("active");
   let temperatureF = document.querySelector("#temp");
+  temperatureF.innerHTML = Math.round((celciusTemperature * 9 / 5) + 32);
  
 }
 
-search("Vancouver");
+let celciusTemperature = null;
 
 let currentTemp = document.querySelector("#celcius");
 currentTemp.addEventListener("click", celciusLink);
 
 let currentTempF = document.querySelector("#fahrenheit");
 currentTempF.addEventListener("click", fahrenheitLink);
+
+search("Vancouver");
