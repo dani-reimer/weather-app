@@ -1,5 +1,5 @@
 h2 {
-  font-size: 28px;
+  font-size: 24px;
   padding: 0;
 }
 
@@ -77,7 +77,7 @@ a {
 }
 
 #search-text-input {
-  max-width: 67%;
+  max-width: 100%;
   margin-bottom: 2px;
 }
 .current-temperature-section {
@@ -93,6 +93,9 @@ a {
 }
 #weather-icon {
   max-width: 75px;
+}
+#temp {
+  font-size: 30px;
 }
 .active {
   color: black;

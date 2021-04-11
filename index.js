@@ -98,7 +98,7 @@ currentButton.addEventListener("click", getPosition);
 
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", handleSubmit);
-// https://api.openweathermap.org/data/2.5/weather?lat=54&lon=-9&appid=afd2be167f88dd904bc213780db71233&units=metric
+
 
 function celciusLink(event) {
   event.preventDefault();
