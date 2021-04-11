@@ -1,11 +1,11 @@
 h2 {
-  font-size: 24px;
+  font-size: 18px;
   padding: 0;
 }
 
 h4 {
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
 }
 h5 {
@@ -55,7 +55,12 @@ body {
 .card-body {
   padding: 0;
 }
-
+.celcius {
+  font-size: 10px;
+}
+.fahrenheit {
+  font-size: 10px;
+}
 a {
   text-decoration: none;
 }
@@ -92,10 +97,10 @@ a {
   margin-left: 20px;
 }
 #weather-icon {
-  max-width: 75px;
+  max-width: 70px;
 }
 #temp {
-  font-size: 30px;
+  font-size: 20px;
 }
 .active {
   color: black;
