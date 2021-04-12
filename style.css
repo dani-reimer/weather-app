@@ -7,6 +7,7 @@ h4 {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
+  margin-top: 0;
 }
 h5 {
   font-size: 14px;
@@ -56,13 +57,17 @@ body {
   padding: 0;
 }
 .celcius {
-  font-size: 10px;
+  font-size: 9px;
+
+  vertical-align: top;
 }
 .fahrenheit {
-  font-size: 10px;
+  font-size: 9px;
+  vertical-align: top;
 }
 a {
   text-decoration: none;
+  font-weight: lighter;
 }
 
 .fa-wind {
@@ -80,10 +85,19 @@ a {
 .first-column {
   padding-left: 15px;
 }
-
+.right-temperature-details {
+  margin-top: -10px;
+}
 #search-text-input {
   max-width: 100%;
   margin-bottom: 2px;
+}
+#weather-icon {
+  border-radius: 80px;
+
+  margin-top: 0px;
+  max-width: 75px;
+  max-height: 75px;
 }
 .current-temperature-section {
   text-align: right;
@@ -100,13 +114,15 @@ a {
   max-width: 70px;
 }
 #temp {
-  font-size: 20px;
+  font-size: 30px;
 }
 .active {
-  color: black;
+  color: hsl(0, 0%, 0%);
+  opacity: 0.6;
   text-decoration: none;
   cursor: default;
 }
 .active:hover {
-  color: black;
+  color: hsl(0, 0%, 0%);
+  opacity: 0.6;
 }
