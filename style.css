@@ -29,6 +29,10 @@ body {
   border-radius: 4px;
 }
 
+.col-6 {
+  margin-left: 0;
+  margin-right: 0;
+}
 .row {
   --bs-gutter-x: 0.3rem;
   --bs-gutter-y: 0.3rem;
@@ -83,9 +87,6 @@ a {
   font-size: 10px;
 }
 
-.first-column {
-  padding-left: 15px;
-}
 .right-temperature-details {
   margin-top: -5px;
 }
@@ -102,7 +103,7 @@ a {
 }
 .current-temperature-section {
   text-align: right;
-  padding-right: 30px;
+
   padding-bottom: 20px;
 }
 .footer {
