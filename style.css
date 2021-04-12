@@ -86,7 +86,7 @@ a {
   padding-left: 15px;
 }
 .right-temperature-details {
-  margin-top: -10px;
+  margin-top: -5px;
 }
 #search-text-input {
   max-width: 100%;
@@ -94,8 +94,8 @@ a {
 }
 #weather-icon {
   border-radius: 80px;
-
-  margin-top: 0px;
+  margin-right: -10px;
+  margin-top: -10px;
   max-width: 75px;
   max-height: 75px;
 }
@@ -110,9 +110,7 @@ a {
   opacity: 0.7;
   margin-left: 20px;
 }
-#weather-icon {
-  max-width: 70px;
-}
+
 #temp {
   font-size: 30px;
 }
