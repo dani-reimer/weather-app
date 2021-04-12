@@ -49,6 +49,9 @@ function showTemperature(response) {
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
   document.querySelector("#weather-icon").setAttribute("src", `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
   celciusTemperature = response.data.main.temp;
+  mphWind = (response.data.wind.speed)/1.609;
+  kmphWind = Math.round(response.data.wind.speed);
+  
 }
 
 function search(city) {
@@ -116,7 +119,29 @@ function fahrenheitLink(event) {
  
 }
 
+function mphLink(event) {
+  event.preventDefault();
+  windspeedKM.classList.remove("active");
+  windspeedMPH.classList.add("active");
+  document.querySelector("#wind").innerHTML = Math.round(mphWind);
+}
+
+function kmphLink(event) {
+  event.preventDefault();
+  windspeedKM.classList.add("active");
+  windspeedMPH.classList.remove("active");
+  document.querySelector("#wind").innerHTML = kmphWind;
+}
+
 let celciusTemperature = null;
+let kmphWind = null;
+let mphWind = null;
+
+let windspeedKM = document.querySelector("#kmph");
+windspeedKM.addEventListener("click", kmphLink);
+
+let windspeedMPH = document.querySelector("#mph");
+windspeedMPH.addEventListener("click", mphLink);
 
 let currentTemp = document.querySelector("#celcius");
 currentTemp.addEventListener("click", celciusLink);
