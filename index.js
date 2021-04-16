@@ -149,4 +149,18 @@ currentTemp.addEventListener("click", celciusLink);
 let currentTempF = document.querySelector("#fahrenheit");
 currentTempF.addEventListener("click", fahrenheitLink);
 
-search("Vancouver");
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thur"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML + `<div class="col-2">
+      <i class="fas fa-wind"></i><br /> ${day} 22 <br /> <strong>  2° </strong>| 1°
+    </div>`;
+  
+  });
+  forecastElement.innerHTML = forecastHTML; 
+}
+  
+showForecast();
+search("New York");
