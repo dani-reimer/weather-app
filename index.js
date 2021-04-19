@@ -55,7 +55,7 @@ function showForecast(response) {
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML = forecastHTML + `<div class="col-2">
-      <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="icon" width="42" /><br /> ${formatDay(forecastDay.dt)}<br /> <span id="high-temp"><strong>  ${Math.round(forecastDay.temp.max)}° </strong></span>| ${Math.round(forecastDay.temp.min)}°
+      <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="icon" width="50" /><br /> ${formatDay(forecastDay.dt)}<br /> <span id="high-temp"><strong>  ${Math.round(forecastDay.temp.max)}° </strong></span>| ${Math.round(forecastDay.temp.min)}°
     </div>`;
     }
   });
@@ -64,10 +64,10 @@ function showForecast(response) {
   }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
+  
   let apiKey = "afd2be167f88dd904bc213780db71233";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  
   axios.get(apiUrl).then(showForecast);
 }
 function showTemperature(response) {
