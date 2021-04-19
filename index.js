@@ -39,20 +39,29 @@ let month = months[now.getMonth()];
 let h5 = document.querySelector("h5");
 h5.innerHTML = `${day} ${month} ${date}<br /> ${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function showForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thur"];
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML = forecastHTML + `<div class="col-2">
-      <i class="fas fa-wind"></i><br /> ${day} 22 <br /> <strong>  2° </strong>| 1°
-    </div>`;
   
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML = forecastHTML + `<div class="col-2">
+      <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="icon" width="42" /><br /> ${formatDay(forecastDay.dt)}<br /> <strong>  ${Math.round(forecastDay.temp.max)}° </strong>| ${Math.round(forecastDay.temp.min)}°
+    </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML; 
-}
+  }
 
 function getForecast(coordinates) {
   console.log(coordinates);
