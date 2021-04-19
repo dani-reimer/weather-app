@@ -39,6 +39,28 @@ let month = months[now.getMonth()];
 let h5 = document.querySelector("h5");
 h5.innerHTML = `${day} ${month} ${date}<br /> ${hours}:${minutes}`;
 
+function showForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thur"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML + `<div class="col-2">
+      <i class="fas fa-wind"></i><br /> ${day} 22 <br /> <strong>  2° </strong>| 1°
+    </div>`;
+  
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML; 
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "afd2be167f88dd904bc213780db71233";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
 function showTemperature(response) {
   document.querySelector("#temp").innerHTML = Math.round(response.data.main.temp);
   let city = response.data.name;
@@ -52,6 +74,7 @@ function showTemperature(response) {
   mphWind = (response.data.wind.speed)/1.609;
   kmphWind = Math.round(response.data.wind.speed);
   
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -149,18 +172,7 @@ currentTemp.addEventListener("click", celciusLink);
 let currentTempF = document.querySelector("#fahrenheit");
 currentTempF.addEventListener("click", fahrenheitLink);
 
-function showForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thur"];
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML = forecastHTML + `<div class="col-2">
-      <i class="fas fa-wind"></i><br /> ${day} 22 <br /> <strong>  2° </strong>| 1°
-    </div>`;
+
   
-  });
-  forecastElement.innerHTML = forecastHTML; 
-}
-  
-showForecast();
+
 search("New York");
