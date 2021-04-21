@@ -109,7 +109,7 @@ function showCurrentTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
   document.querySelector("#weather-icon").setAttribute("src", `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
- 
+  getForecast(response.data.coord);
   }
   function retrievePosition(position) {
  
@@ -119,7 +119,7 @@ function showCurrentTemperature(response) {
   let units = "metric";
   let apiLatUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiLatUrl).then(showCurrentTemperature);
-
+ 
 
 }
 
